@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "293290805019",
+    "project_id": "flutter-projects-ced28",
+    "storage_bucket": "flutter-projects-ced28.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:293290805019:android:dcbd1abe12ee97ead235be",
+        "android_client_info": {
+          "package_name": "com.inglesdivino.flutter_push_local"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBER0-3n4caO4JXo2JM1HOeE2NlLqgYntM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
