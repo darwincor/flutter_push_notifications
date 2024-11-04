@@ -2,8 +2,12 @@ import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_push_local_notifications/presentation/blocs/notifications/notifications_bloc.dart';
+import 'package:flutter_push_local_notifications/presentation/config/local_notifications/local_notifications.dart';
 import 'package:flutter_push_local_notifications/router/app_router.dart';
 import 'package:flutter_push_local_notifications/theme/app_theme.dart';
+
+
+
 
 void main() async {
 
@@ -11,11 +15,15 @@ void main() async {
   FirebaseMessaging.onBackgroundMessage(firebaseMessagingBackgroundHandler);
 
   await NotificationsBloc.initializeFCM();
+  await LocalNotifications.initializeLocalNotifications();
   
   runApp(
     MultiBlocProvider(
       providers: [
-        BlocProvider(create: (_) => NotificationsBloc())
+        BlocProvider(create: (_) => NotificationsBloc(
+          requestLocalNotificationPermissions: LocalNotifications.requestPermissionLocalNotifications,
+          showLocalNotification: LocalNotifications.showLocalNotification
+        ))
       ], 
       child: const MainApp())
     
